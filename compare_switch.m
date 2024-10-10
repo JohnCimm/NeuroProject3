@@ -1,13 +1,13 @@
-function [new_user,new_real] = compare_switch(n,a,a_prev,f,f_prev,v_user,v_real)
+function [new_user,new_real] = compare_switch(b,a,f,v_user,v_real)
 
-switch n
+switch b
     case 1
-        [new_user,new_real]= compare_val(a,a_prev,v_user,v_real);
+        [new_user,new_real]= compare_val(a,2,6,v_user,v_real);
         
     case 2
-        [new_user,new_real]= compare_val(f,f_prev,v_user,v_real);
+        [new_user,new_real]= compare_val(f,50,100,v_user,v_real);
     case 3
-        [new_user,new_real]= compare_val(a,a_prev,v_user,v_real);
+        [new_user,new_real]= compare_val(a,2,6,v_user,v_real);
 
 
 end

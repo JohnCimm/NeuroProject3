@@ -1,8 +1,10 @@
-function [new_array] = compare_val(user_v, v,array,real_val_array)
-reply = input('Is the shock more or less previous shock? Press 1  or 0 for less:');
-comp = (user_val>= v)
-
-new_array = [array,comp]
-
+function [new_array,new_real_array] = compare_val(vi, max,min,array,real_val_array)
+reply = input('Rate the proceived intensity from 1 to 10?');
+real_rating = 9-round(((vi-min)/(max-min))/0.1111)
+if vi == 50 
+    real_rating = 1
+    elif vi 
+new_array = [array,reply];
+new_real_array = [real_val_array,real_rating];
 
 end
