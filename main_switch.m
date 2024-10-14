@@ -1,6 +1,6 @@
 function [a,f,new_array] = main_switch(n,iter,freqs,amplit)
-amp=2;%mA
-freq=30;%Hz
+amp=8;%mA
+freq=50;%Hz
 switch n
     case 1
         
