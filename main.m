@@ -14,7 +14,7 @@ end
 %%
 % CONSTANT VARIABLES $$$$$$$$$$$$$$$$$$$$
 
-amp=6;%mA
+amp=8;%mA
 
 
 pw=200;%us
@@ -23,8 +23,10 @@ f=100;%Hz
 % DECISION ARRAY FROM USER
 
 s.stim([amp,pw,f,1])
-%
-
+%%
+a_array = shuffle(linspace(2,8,10))
+f_array = shuffle(linspace(50 , 100,10))
+pw_array = linspace(200,200,10)
 %%
 real_val = []
 user_input = []
@@ -41,16 +43,16 @@ for i = 1:2
     reply = 'Y';
     while reply == 'Y' 
 
-       
+       s.stim();
        [a,f] = main_switch(i,j,f_array,a_array);
         
         
         time0 = tic;
-        timeLimit = 5; % time limit for stimulation
+        timeLimit = 1; % time limit for stimulation
         s.stim([a,pw,f,1])
          if toc(time0)>timeLimit % stops stimulation at time limit
-           display('Stimulation stopped')
-           s.stim();
+           display('Stimulation started')
+           s.stim([a,pw,f,1])
          end
         [user_input,real_val] =compare_switch(i,a,f,user_input,real_val);
         
@@ -80,7 +82,7 @@ display('Thanks for playing!')
 
 
 
-%% Stop Stim
+%%Stop Stim
 s.stim();
 
 %% close connection
