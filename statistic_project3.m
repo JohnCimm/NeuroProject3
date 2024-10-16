@@ -78,3 +78,43 @@ a_u = adtest(user_a)
 
 %histogram(u1.user_input(6:10))
 %histogram(r1.real_val)
+groupOrder = (6)*((real_a-1)/(9))  + 2.
+%boxplot(MPG,groupingVariables,"Orientation","horizontal", ...
+%    "GroupOrder",groupOrder)
+%xlabel("MPG")
+%title("MPG by Origin and Year")
+buffer_freq = zeros([1,length(real_f)]);
+b2 = linspace(50,100,10);
+for i = 1:length(real_f)
+    n = real_f(i);
+    buffer_freq(i) = b2(n);
+end
+
+
+buffer_amp = zeros([1,length(real_a)]);
+b1 = linspace(2,8,10);
+for i = 1:length(real_a)
+    n = real_a(i);
+    buffer_amp(i) = b1(n);
+end
+
+
+%% More gross code
+i = 1
+user_i = []
+
+for i= 1:10
+user_i = [user_i ; [u1.user_input(i),u2.user_input(i),u3.user_input(i),u4.user_input(1),u5.user_input(i),u6.user_input(i),u7.user_input(i),u8.user_input(i),u9.user_input(i)]]
+end
+%histogram(user_a)
+
+figure(1)
+
+boxplot(user_a,buffer_amp)
+fi = polyfit(user_a,buffer_amp,1)
+x1 = 0.554.*b1 + 3.2506
+hold;
+plot(x1,b1)
+plot
+title('Amplitude')
+hold off
