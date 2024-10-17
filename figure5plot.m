@@ -81,38 +81,55 @@ subplot(3,3,1) % Figure 5
 
 boxplot([user_a1',user_f1'],'Labels',{'Amplitude','Frequency'})
 ylabel('Percieved Intensity')
-lgd1 = sprintf('p1=.%f', p1); % legend 
-legend(lgd1)
+lgd1 = sprintf('P-value =.%f', p1); % legend 
+
+text(0.75,9,lgd1)
+
 title('User 1')
 subplot(3,3,2)
 boxplot([user_a2(1:9)',user_f2'],'Labels',{'Amplitude','Frequency'})
 ylabel('Percieved Intensity')
 title('User 2')
+lgd2 = sprintf('P-value =.%f', p2); % legend 
+
+text(0.75,9,lgd2)
 subplot(3,3,3)
 boxplot([user_a3',user_f3'],'Labels',{'Amplitude','Frequency'})
 ylabel('Percieved Intensity')
+
+text(2, 9, sprintf('P-value =.%f', p3)); % legend 
 title('User 3')
+
+
+
 subplot(3,3,4)
 boxplot([user_a4',user_f4'],'Labels',{'Amplitude','Frequency'})
 ylabel('Percieved Intensity')
 title('User 4')
+text(0.75, 9, sprintf('P-value =.%f', p4)); % legend
 subplot(3,3,5)
 boxplot([user_a5',user_f5'],'Labels',{'Amplitude','Frequency'})
 ylabel('Percieved Intensity')
 title('User 5')
+text(0.75, 9, sprintf('P-value =.%f', p5)); % legend
 subplot(3,3,6)
 boxplot([user_a6',user_f6'],'Labels',{'Amplitude','Frequency'})
 ylabel('Percieved Intensity')
+text(1.5, 1, sprintf('P-value =.%f', p6)); % legend
 title('User 6')
 subplot(3,3,7)
 boxplot([user_a7',user_f7'],'Labels',{'Amplitude','Frequency'})
 ylabel('Percieved Intensity')
+text(1.5, 1, sprintf('P-value =.%f', p7)); % legend
 title('User 7')
 subplot(3,3,8)
+
 boxplot([user_a8',user_f8'],'Labels',{'Amplitude','Frequency'})
 ylabel('Percieved Intensity')
+text(1.5, 9, sprintf('P-value =.%f', p8)); % legend
 title('User 8')
 subplot(3,3,9)
 boxplot([user_a9',user_f9'],'Labels',{'Amplitude','Frequency'})
 ylabel('Percieved Intensity')
+text(1.5, 1, sprintf('P-value =.%f', p9)); % legend
 title('User 9')
